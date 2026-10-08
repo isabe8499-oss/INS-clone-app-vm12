@@ -260,7 +260,7 @@ private fun VirtualContainerScreen(
     var classLoaderDiag by remember { mutableStateOf<ClassLoaderHookDiagnostic?>(null) }
     var hookSnapshot by remember { mutableStateOf<HookedRuntimeSnapshot?>(null) }
 
-    // 0 = In-Process Cloned App (Full Screen), 1 = Hooked Identity, 2 = Sandbox I/O, 3 = DEX ClassLoader
+    // 0 = In-Process Cloned App (Full Screen), 1 = Hooked Identity, 2 = Entrada/Saída do Sandbox, 3 = DEX ClassLoader
     var activeSection by remember { mutableIntStateOf(0) }
     var showEngineInspectorBar by remember { mutableStateOf(false) }
     var statusToast by remember { mutableStateOf<String?>(null) }
@@ -548,7 +548,7 @@ private fun VirtualContainerScreen(
                                         activeSection = 0
                                         showEngineInspectorBar = false
                                     },
-                                    label = { Text("Layar Clone") },
+                                    label = { Text("Tela do Clone") },
                                     leadingIcon = {
                                         Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(16.dp))
                                     },
@@ -557,7 +557,7 @@ private fun VirtualContainerScreen(
                                 FilterChip(
                                     selected = activeSection == 1,
                                     onClick = { activeSection = 1 },
-                                    label = { Text("Hooked ID") },
+                                    label = { Text("ID Interceptado") },
                                     leadingIcon = {
                                         Icon(Icons.Default.Security, contentDescription = null, modifier = Modifier.size(16.dp))
                                     },
@@ -566,7 +566,7 @@ private fun VirtualContainerScreen(
                                 FilterChip(
                                     selected = activeSection == 2,
                                     onClick = { activeSection = 2 },
-                                    label = { Text("Sandbox I/O") },
+                                    label = { Text("Entrada/Saída do Sandbox") },
                                     leadingIcon = {
                                         Icon(Icons.Default.Storage, contentDescription = null, modifier = Modifier.size(16.dp))
                                     },
@@ -575,7 +575,7 @@ private fun VirtualContainerScreen(
                                 FilterChip(
                                     selected = activeSection == 3,
                                     onClick = { activeSection = 3 },
-                                    label = { Text("DEX Loader") },
+                                    label = { Text("Carregador DEX") },
                                     leadingIcon = {
                                         Icon(Icons.Default.BugReport, contentDescription = null, modifier = Modifier.size(16.dp))
                                     },
@@ -700,7 +700,7 @@ private fun VirtualContainerScreen(
                                                 ) {
                                                     Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(16.dp))
                                                     Spacer(modifier = Modifier.width(6.dp))
-                                                    Text("Uji Hook", style = MaterialTheme.typography.labelLarge)
+                                                    Text("Testar Interceptação", style = MaterialTheme.typography.labelLarge)
                                                 }
                                             }
 
@@ -764,7 +764,7 @@ private fun VirtualContainerScreen(
                                                 color = Color.White
                                             )
                                             Text(
-                                                text = "Seluruh aktivitas akun clone disimpan di dalam database SQLite & XML SharedPreferences terisolasi.",
+                                                text = "Seluruh aktivitas akun clone disimpan di dalam database SQLite & XML Preferências Compartilhadas terisolasi.",
                                                 style = MaterialTheme.typography.bodySmall,
                                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                                             )
@@ -779,8 +779,8 @@ private fun VirtualContainerScreen(
                                                     modifier = Modifier.weight(1f)
                                                 ) {
                                                     Column(modifier = Modifier.padding(12.dp)) {
-                                                        Text("SQLite Records", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
-                                                        Text("$sqliteRowCount Baris", style = MaterialTheme.typography.titleLarge, color = Color.White)
+                                                        Text("Registros SQLite", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
+                                                        Text("$sqliteRowCount Linhas", style = MaterialTheme.typography.titleLarge, color = Color.White)
                                                         Text("app_sandbox_data.db", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                                     }
                                                 }
@@ -790,7 +790,7 @@ private fun VirtualContainerScreen(
                                                     modifier = Modifier.weight(1f)
                                                 ) {
                                                     Column(modifier = Modifier.padding(12.dp)) {
-                                                        Text("SharedPreferences", style = MaterialTheme.typography.labelSmall, color = InsVioletTertiary)
+                                                        Text("Preferências Compartilhadas", style = MaterialTheme.typography.labelSmall, color = InsVioletTertiary)
                                                         Text("$prefsKeyCount Keys", style = MaterialTheme.typography.titleLarge, color = Color.White)
                                                         Text("shared_prefs/*.xml", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                                     }
@@ -816,7 +816,7 @@ private fun VirtualContainerScreen(
                                                         val totalRows = tables.sumOf { VirtualSqliteManager.readTable(dbFile, it).rows.size }
                                                         withContext(Dispatchers.Main) {
                                                             sqliteRowCount = totalRows
-                                                            statusToast = "Baris baru ditulis ke SQLite klon!"
+                                                            statusToast = "Linhas baru ditulis ke SQLite klon!"
                                                         }
                                                     }
                                                 },
@@ -852,7 +852,7 @@ private fun VirtualContainerScreen(
                                             ) {
                                                 Icon(Icons.Default.FolderSpecial, contentDescription = null, modifier = Modifier.size(18.dp))
                                                 Spacer(modifier = Modifier.width(8.dp))
-                                                Text("Tambah Key Baru ke SharedPreferences XML")
+                                                Text("Adicionar Nova Chave ao XML de Preferências")
                                             }
 
                                             Spacer(modifier = Modifier.height(8.dp))
@@ -885,7 +885,7 @@ private fun VirtualContainerScreen(
                                             ) {
                                                 Icon(Icons.Default.Refresh, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
                                                 Spacer(modifier = Modifier.width(8.dp))
-                                                Text("Hapus Data Clone & Reset Akun Baru", color = Color.White, fontWeight = FontWeight.Bold)
+                                                Text("Apagar Dados do Clone e Redefinir Conta", color = Color.White, fontWeight = FontWeight.Bold)
                                             }
                                         }
                                     }
@@ -1016,7 +1016,7 @@ private fun VirtualBootErrorPanel(
                 .fillMaxWidth()
                 .height(48.dp)
         ) {
-            Text("Kembali ke Beranda Clone App", color = Color.White)
+            Text("Voltar à Página Inicial dos Clones", color = Color.White)
         }
     }
 }
