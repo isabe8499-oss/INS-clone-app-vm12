@@ -164,7 +164,7 @@ fun InsManagerScreen(
                                 modifier = Modifier.size(15.dp)
                             )
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("Clear Cache", style = MaterialTheme.typography.labelSmall, color = InsEmeraldActive)
+                            Text("Limpar cache", style = MaterialTheme.typography.labelSmall, color = InsEmeraldActive)
                         }
                         OutlinedButton(
                             onClick = onResetSandboxData,
@@ -179,7 +179,7 @@ fun InsManagerScreen(
                                 modifier = Modifier.size(15.dp)
                             )
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("Reset Data", style = MaterialTheme.typography.labelSmall, color = InsAmberWarning)
+                            Text("Redefinir dados", style = MaterialTheme.typography.labelSmall, color = InsAmberWarning)
                         }
                     }
                 }
@@ -225,21 +225,21 @@ fun InsManagerScreen(
             Tab(
                 selected = subTab == InsManagerSubTab.FILE_EXPLORER,
                 onClick = { onSelectSubTab(InsManagerSubTab.FILE_EXPLORER) },
-                text = { Text("Direktori Sandbox", style = MaterialTheme.typography.labelLarge) },
+                text = { Text("Diretório do sandbox", style = MaterialTheme.typography.labelLarge) },
                 icon = { Icon(Icons.Default.Folder, contentDescription = null, modifier = Modifier.size(18.dp)) },
                 modifier = Modifier.testTag("ins_subtab_explorer")
             )
             Tab(
                 selected = subTab == InsManagerSubTab.SQLITE_VIEWER,
                 onClick = { onSelectSubTab(InsManagerSubTab.SQLITE_VIEWER) },
-                text = { Text("SQLite Viewer", style = MaterialTheme.typography.labelLarge) },
+                text = { Text("Visualizador SQLite", style = MaterialTheme.typography.labelLarge) },
                 icon = { Icon(Icons.Default.TableChart, contentDescription = null, modifier = Modifier.size(18.dp)) },
                 modifier = Modifier.testTag("ins_subtab_sqlite")
             )
             Tab(
                 selected = subTab == InsManagerSubTab.XML_PREFS_EDITOR,
                 onClick = { onSelectSubTab(InsManagerSubTab.XML_PREFS_EDITOR) },
-                text = { Text("XML SharedPrefs", style = MaterialTheme.typography.labelLarge) },
+                text = { Text("SharedPrefs XML", style = MaterialTheme.typography.labelLarge) },
                 icon = { Icon(Icons.Default.Code, contentDescription = null, modifier = Modifier.size(18.dp)) },
                 modifier = Modifier.testTag("ins_subtab_xml")
             )
@@ -312,7 +312,7 @@ fun InsManagerScreen(
             },
             confirmButton = {
                 TextButton(onClick = onClosePreviewTextFile) {
-                    Text("Tutup")
+                    Text("Fechar")
                 }
             }
         )
@@ -395,7 +395,7 @@ private fun SandboxFileExplorerPane(
                     ) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, modifier = Modifier.size(15.dp))
                         Spacer(modifier = Modifier.width(4.dp))
-                        Text("Ke Atas", style = MaterialTheme.typography.labelSmall)
+                        Text("Subir", style = MaterialTheme.typography.labelSmall)
                     }
                 }
                 FilterChip(
@@ -575,7 +575,7 @@ private fun SqliteInteractiveViewerPane(
                             ) {
                                 Icon(Icons.Default.Code, contentDescription = null, modifier = Modifier.size(15.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("SQL Query", style = MaterialTheme.typography.labelSmall)
+                                Text("Consulta SQL", style = MaterialTheme.typography.labelSmall)
                             }
                             Button(
                                 onClick = { isInsertingRow = true },
@@ -585,7 +585,7 @@ private fun SqliteInteractiveViewerPane(
                             ) {
                                 Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(15.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Baris", style = MaterialTheme.typography.labelSmall)
+                                Text("Linha", style = MaterialTheme.typography.labelSmall)
                             }
                         }
                     }
@@ -613,7 +613,7 @@ private fun SqliteInteractiveViewerPane(
                         ) {
                             Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("Jalankan SQL")
+                            Text("Executar SQL")
                         }
                     }
                 }
@@ -684,12 +684,12 @@ private fun SqliteInteractiveViewerPane(
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Icon(
                                     imageVector = Icons.Default.Edit,
-                                    contentDescription = "Edit Baris",
+                                    contentDescription = "Editar linha",
                                     tint = InsCyanPrimary,
                                     modifier = Modifier.size(15.dp)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Edit Sel", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
+                                Text("Editar célula", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
                             }
                         }
                         Spacer(modifier = Modifier.height(8.dp))
@@ -761,7 +761,7 @@ private fun SqliteInteractiveViewerPane(
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = InsCyanPrimary)
                 ) {
-                    Text("Simpan Perubahan")
+                    Text("Salvar alterações")
                 }
             },
             dismissButton = {
@@ -772,10 +772,10 @@ private fun SqliteInteractiveViewerPane(
                             editingRow = null
                         }
                     ) {
-                        Text("Hapus Baris", color = InsCrimsonDanger)
+                        Text("Excluir linha", color = InsCrimsonDanger)
                     }
                     TextButton(onClick = { editingRow = null }) {
-                        Text("Batal")
+                        Text("Cancelar")
                     }
                 }
             }
@@ -816,12 +816,12 @@ private fun SqliteInteractiveViewerPane(
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = InsCyanPrimary)
                 ) {
-                    Text("Insert Row")
+                    Text("Inserir linha")
                 }
             },
             dismissButton = {
                 TextButton(onClick = { isInsertingRow = false }) {
-                    Text("Batal")
+                    Text("Cancelar")
                 }
             }
         )
@@ -914,7 +914,7 @@ private fun XmlSharedPreferencesEditorPane(
                             ) {
                                 Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(15.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Tambah Key", style = MaterialTheme.typography.labelSmall)
+                                Text("Adicionar chave", style = MaterialTheme.typography.labelSmall)
                             }
                         }
                     }
@@ -949,7 +949,7 @@ private fun XmlSharedPreferencesEditorPane(
                         ) {
                             Icon(Icons.Default.Save, contentDescription = null, modifier = Modifier.size(18.dp))
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Simpan Raw XML Secara Real-Time")
+                            Text("Salvar XML bruto em tempo real")
                         }
                     }
                 }
@@ -1001,10 +1001,10 @@ private fun XmlSharedPreferencesEditorPane(
                             )
                         }
                         IconButton(onClick = { editingEntry = entry }) {
-                            Icon(Icons.Default.Edit, contentDescription = "Edit Key", tint = InsCyanPrimary, modifier = Modifier.size(18.dp))
+                            Icon(Icons.Default.Edit, contentDescription = "Editar chave", tint = InsCyanPrimary, modifier = Modifier.size(18.dp))
                         }
                         IconButton(onClick = { onDeleteEntry(entry.key) }) {
-                            Icon(Icons.Default.DeleteOutline, contentDescription = "Hapus Key", tint = InsCrimsonDanger, modifier = Modifier.size(18.dp))
+                            Icon(Icons.Default.DeleteOutline, contentDescription = "Excluir chave", tint = InsCrimsonDanger, modifier = Modifier.size(18.dp))
                         }
                     }
                 }
@@ -1037,14 +1037,14 @@ private fun XmlSharedPreferencesEditorPane(
                     OutlinedTextField(
                         value = keyText,
                         onValueChange = { keyText = it },
-                        label = { Text("Attribute name (Key)") },
+                        label = { Text("Nome do atributo (chave)") },
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth()
                     )
                     OutlinedTextField(
                         value = valText,
                         onValueChange = { valText = it },
-                        label = { Text("Nilai (Value)") },
+                        label = { Text("Valor") },
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -1075,7 +1075,7 @@ private fun XmlSharedPreferencesEditorPane(
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = InsCyanPrimary)
                 ) {
-                    Text("Simpan ke XML")
+                    Text("Salvar no XML")
                 }
             },
             dismissButton = {
@@ -1085,7 +1085,7 @@ private fun XmlSharedPreferencesEditorPane(
                         showAddKeyDialog = false
                     }
                 ) {
-                    Text("Batal")
+                    Text("Cancelar")
                 }
             }
         )
