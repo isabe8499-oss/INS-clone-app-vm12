@@ -138,7 +138,7 @@ fun IdentitySpoofScreen(
                     ) {
                         Icon(Icons.Default.Casino, contentDescription = null, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("Acak Semua", style = MaterialTheme.typography.labelLarge)
+                        Text("Aleatorizar Tudo", style = MaterialTheme.typography.labelLarge)
                     }
                 }
 
@@ -407,7 +407,7 @@ fun IdentitySpoofScreen(
                         ) {
                             Icon(Icons.Default.Save, contentDescription = null, modifier = Modifier.size(18.dp))
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Simpan Identitas & Sinkronkan ke Sandbox XML", color = Color.Black, fontWeight = FontWeight.Bold)
+                            Text("Salvar Identidade e Sincronizar com o XML do Sandbox", color = Color.Black, fontWeight = FontWeight.Bold)
                         }
                     }
                 }
