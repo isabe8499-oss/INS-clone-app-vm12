@@ -437,7 +437,7 @@ fun InProcessRealApkSandboxHost(
                         Icon(Icons.Default.Refresh, contentDescription = null, tint = InsNavyDeep)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "InstallToVirtualSpace & Launch (${resolvedHost.appLabel})",
+                            text = "Instalar no Espaço Virtual e Abrir (${resolvedHost.appLabel})",
                             color = InsNavyDeep,
                             fontWeight = FontWeight.Bold
                         )
@@ -473,7 +473,7 @@ fun InProcessRealApkSandboxHost(
                 Spacer(modifier = Modifier.height(10.dp))
 
                 TextButton(onClick = onExitContainer) {
-                    Text("Kembali ke Beranda Clone App", color = Color.Gray)
+                    Text("Voltar à Página Inicial dos Clones", color = Color.Gray)
                 }
             }
         }
@@ -590,7 +590,7 @@ fun InProcessRealApkSandboxHost(
                     ) {
                         Icon(Icons.Default.CleaningServices, contentDescription = null, tint = Color.White, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Hapus Data Clone (Reset Akun Baru)", color = Color.White, fontWeight = FontWeight.Bold)
+                        Text("Apagar Dados do Clone (Redefinir Conta)", color = Color.White, fontWeight = FontWeight.Bold)
                     }
 
                     Button(
@@ -605,7 +605,7 @@ fun InProcessRealApkSandboxHost(
                     ) {
                         Icon(Icons.Default.CleaningServices, contentDescription = null, tint = InsEmeraldActive, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Bersihkan Cache Clone", color = InsEmeraldActive)
+                        Text("Limpar Cache do Clone", color = InsEmeraldActive)
                     }
 
                     Button(
@@ -618,7 +618,7 @@ fun InProcessRealApkSandboxHost(
                     ) {
                         Icon(Icons.Default.Layers, contentDescription = null, tint = InsCyanPrimary, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Pilih Layout XML / Activity dari base.apk", color = Color.White)
+                        Text("Selecionar Layout XML / Atividade do base.apk", color = Color.White)
                     }
 
                     Button(
@@ -631,7 +631,7 @@ fun InProcessRealApkSandboxHost(
                     ) {
                         Icon(Icons.Default.Security, contentDescription = null, tint = InsEmeraldActive, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Info Hook, Device ID & Database Sandbox", color = Color.White)
+                        Text("Informações de Interceptação, ID do Dispositivo e Banco do Sandbox", color = Color.White)
                     }
 
                     HorizontalDivider(color = Color.White.copy(alpha = 0.1f))
@@ -646,13 +646,13 @@ fun InProcessRealApkSandboxHost(
                     ) {
                         Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = null, tint = Color(0xFFF43F5E), modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Kembali ke Beranda Clone App", color = Color(0xFFF43F5E), fontWeight = FontWeight.Bold)
+                        Text("Voltar à Página Inicial dos Clones", color = Color(0xFFF43F5E), fontWeight = FontWeight.Bold)
                     }
                 }
             },
             confirmButton = {
                 TextButton(onClick = { showSandboxControlSheet = false }) {
-                    Text("Tutup", color = InsCyanPrimary)
+                    Text("Fechar", color = InsCyanPrimary)
                 }
             }
         )
@@ -734,7 +734,7 @@ fun InProcessRealApkSandboxHost(
                 ) {
                     Icon(Icons.Default.DeleteOutline, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
                     Spacer(modifier = Modifier.width(6.dp))
-                    Text("Hapus Data & Reset", color = Color.White, fontWeight = FontWeight.Bold)
+                    Text("Apagar Dados e Redefinir", color = Color.White, fontWeight = FontWeight.Bold)
                 }
             },
             dismissButton = {
@@ -909,7 +909,7 @@ fun InProcessRealApkSandboxHost(
             },
             confirmButton = {
                 TextButton(onClick = { showApkComponentPicker = false }) {
-                    Text("Tutup")
+                    Text("Fechar")
                 }
             }
         )
@@ -1005,7 +1005,7 @@ fun InProcessRealApkSandboxHost(
             },
             confirmButton = {
                 TextButton(onClick = { showBindInstalledAppDialog = false }) {
-                    Text("Tutup", color = InsCyanPrimary)
+                    Text("Fechar", color = InsCyanPrimary)
                 }
             }
         )
