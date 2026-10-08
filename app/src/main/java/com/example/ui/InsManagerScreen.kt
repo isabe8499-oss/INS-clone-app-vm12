@@ -145,7 +145,7 @@ fun InsManagerScreen(
                             modifier = Modifier.testTag("ins_manager_header")
                         )
                         Text(
-                            text = "Virtual Sandbox Explorer • SQLite Viewer • XML Editor",
+                            text = "Virtual Sandbox Explorer • Visualizador SQLite • XML Editor",
                             style = MaterialTheme.typography.labelSmall,
                             color = InsCyanPrimary
                         )
@@ -216,7 +216,7 @@ fun InsManagerScreen(
             }
         }
 
-        // Sub-Tab Row: File Explorer | SQLite Viewer | XML Editor
+        // Sub-Tab Row: File Explorer | Visualizador SQLite | XML Editor
         TabRow(
             selectedTabIndex = subTab.ordinal,
             containerColor = InsSurfaceElevated,
@@ -738,7 +738,7 @@ private fun SqliteInteractiveViewerPane(
             onDismissRequest = { editingRow = null },
             containerColor = InsSurfaceDark,
             title = {
-                Text("Edit Baris SQLite (rowid=$rowId)", style = MaterialTheme.typography.titleMedium, color = Color.White)
+                Text("Editar Linha SQLite (rowid=$rowId)", style = MaterialTheme.typography.titleMedium, color = Color.White)
             },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -888,7 +888,7 @@ private fun XmlSharedPreferencesEditorPane(
                                     rawEditorBuffer = rawXmlContent
                                     isRawMode = true
                                 },
-                                label = { Text("Raw XML") },
+                                label = { Text("XML Bruto") },
                                 modifier = Modifier.testTag("xml_raw_mode_chip")
                             )
                         }
