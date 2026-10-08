@@ -170,11 +170,11 @@ fun InsVirtualSpaceApp(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Add,
-                                contentDescription = "Tambah Aplikasi ke Ruang Virtual"
+                                contentDescription = "Adicionar aplicativo ao espaço virtual"
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "Tambah Klon",
+                                text = "Adicionar clone",
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.Bold
                             )
@@ -192,8 +192,8 @@ fun InsVirtualSpaceApp(
                         NavigationBarItem(
                             selected = currentTab == MainNavTab.HOME_SPACE,
                             onClick = { viewModel.selectTab(MainNavTab.HOME_SPACE) },
-                            icon = { Icon(Icons.Default.GridView, contentDescription = "Clone Space") },
-                            label = { Text("Clone Space") },
+                            icon = { Icon(Icons.Default.GridView, contentDescription = "Espaço de Clones") },
+                            label = { Text("Espaço de Clones") },
                             modifier = Modifier.testTag("nav_tab_home")
                         )
                         NavigationBarItem(
@@ -206,15 +206,15 @@ fun InsVirtualSpaceApp(
                         NavigationBarItem(
                             selected = currentTab == MainNavTab.IDENTITY_SPOOF,
                             onClick = { viewModel.selectTab(MainNavTab.IDENTITY_SPOOF) },
-                            icon = { Icon(Icons.Default.Fingerprint, contentDescription = "Identity Spoof") },
-                            label = { Text("Identity ID") },
+                            icon = { Icon(Icons.Default.Fingerprint, contentDescription = "Falsificação de Identidade") },
+                            label = { Text("ID de Identidade") },
                             modifier = Modifier.testTag("nav_tab_identity")
                         )
                         NavigationBarItem(
                             selected = currentTab == MainNavTab.ARCHITECTURE,
                             onClick = { viewModel.selectTab(MainNavTab.ARCHITECTURE) },
-                            icon = { Icon(Icons.Default.DeveloperBoard, contentDescription = "Engine Core") },
-                            label = { Text("Arsitektur") },
+                            icon = { Icon(Icons.Default.DeveloperBoard, contentDescription = "Núcleo do Motor") },
+                            label = { Text("Arquitetura") },
                             modifier = Modifier.testTag("nav_tab_architecture")
                         )
                     }
@@ -235,8 +235,8 @@ fun InsVirtualSpaceApp(
                         NavigationRailItem(
                             selected = currentTab == MainNavTab.HOME_SPACE,
                             onClick = { viewModel.selectTab(MainNavTab.HOME_SPACE) },
-                            icon = { Icon(Icons.Default.GridView, contentDescription = "Clone Space") },
-                            label = { Text("Clone Space") },
+                            icon = { Icon(Icons.Default.GridView, contentDescription = "Espaço de Clones") },
+                            label = { Text("Espaço de Clones") },
                             modifier = Modifier.testTag("rail_tab_home")
                         )
                         NavigationRailItem(
@@ -249,15 +249,15 @@ fun InsVirtualSpaceApp(
                         NavigationRailItem(
                             selected = currentTab == MainNavTab.IDENTITY_SPOOF,
                             onClick = { viewModel.selectTab(MainNavTab.IDENTITY_SPOOF) },
-                            icon = { Icon(Icons.Default.Fingerprint, contentDescription = "Identity Spoof") },
-                            label = { Text("Identity ID") },
+                            icon = { Icon(Icons.Default.Fingerprint, contentDescription = "Falsificação de Identidade") },
+                            label = { Text("ID de Identidade") },
                             modifier = Modifier.testTag("rail_tab_identity")
                         )
                         NavigationRailItem(
                             selected = currentTab == MainNavTab.ARCHITECTURE,
                             onClick = { viewModel.selectTab(MainNavTab.ARCHITECTURE) },
-                            icon = { Icon(Icons.Default.DeveloperBoard, contentDescription = "Arsitektur") },
-                            label = { Text("Arsitektur") },
+                            icon = { Icon(Icons.Default.DeveloperBoard, contentDescription = "Arquitetura") },
+                            label = { Text("Arquitetura") },
                             modifier = Modifier.testTag("rail_tab_architecture")
                         )
                     }
@@ -399,7 +399,7 @@ fun InsVirtualSpaceApp(
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.Close,
-                                            contentDescription = "Tutup Notifikasi",
+                                            contentDescription = "Fechar notificação",
                                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                             modifier = Modifier.size(16.dp)
                                         )
@@ -450,17 +450,17 @@ fun InsVirtualSpaceApp(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                            Text("Status Engine: ACTIVE (Root-Free Mode)", style = MaterialTheme.typography.labelMedium, color = InsEmeraldActive)
+                            Text("Status do motor: ATIVO (modo sem root)", style = MaterialTheme.typography.labelMedium, color = InsEmeraldActive)
                             Text("Mount Path: /data/user/0/com.ins.virtualspace/virtual/user/0/", style = MaterialTheme.typography.labelSmall, fontFamily = JetBrainsMonoFamily, color = Color.White)
-                            Text("Total Instance Terklon: ${clonedApps.size} APK", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("Intersepsi Binder Tercatat: ${hookLogs.size} Events", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text("Total de instâncias clonadas: ${clonedApps.size} APK", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text("Interceptações Binder registradas: ${hookLogs.size} Events", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
             },
             confirmButton = {
                 TextButton(onClick = { viewModel.setShowProfileDialog(false) }) {
-                    Text("Tutup")
+                    Text("Fechar")
                 }
             }
         )
