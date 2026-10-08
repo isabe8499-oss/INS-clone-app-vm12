@@ -242,7 +242,7 @@ fun HomeDualSpaceScreen(
                                     border = BorderStroke(1.dp, InsCyanPrimary.copy(alpha = 0.4f))
                                 ) {
                                     Text(
-                                        text = "DUAL SPACE",
+                                        text = "ESPAÇO DUPLO",
                                         style = MaterialTheme.typography.labelSmall,
                                         color = InsCyanPrimary,
                                         modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
@@ -250,7 +250,7 @@ fun HomeDualSpaceScreen(
                                 }
                             }
                             Text(
-                                text = "com.ins.virtualspace • Ketuk ikon untuk jalankan APK",
+                                text = "com.ins.virtualspace • Toque no ícone para executar o APK",
                                 style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -272,7 +272,7 @@ fun HomeDualSpaceScreen(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.CloudUpload,
-                                contentDescription = "Upload APK ke Tmpfiles.org",
+                                contentDescription = "Enviar APK para Tmpfiles.org",
                                 tint = InsAmberWarning
                             )
                         }
@@ -296,7 +296,7 @@ fun HomeDualSpaceScreen(
                         ) {
                             Icon(
                                 imageVector = if (isSearchActive) Icons.Default.Close else Icons.Default.Search,
-                                contentDescription = "Cari Aplikasi Klon",
+                                contentDescription = "Pesquisar aplicativos clonados",
                                 tint = InsCyanPrimary
                             )
                         }
@@ -319,12 +319,12 @@ fun HomeDualSpaceScreen(
                     OutlinedTextField(
                         value = searchQuery,
                         onValueChange = onSearchQueryChange,
-                        placeholder = { Text("Cari aplikasi terklon, package, atau model...") },
+                        placeholder = { Text("Pesquisar aplicativo clonado, pacote ou modelo...") },
                         leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                         trailingIcon = {
                             if (searchQuery.isNotEmpty()) {
                                 IconButton(onClick = { onSearchQueryChange("") }) {
-                                    Icon(Icons.Default.Close, contentDescription = "Hapus pencarian")
+                                    Icon(Icons.Default.Close, contentDescription = "Limpar pesquisa")
                                 }
                             }
                         },
@@ -396,14 +396,14 @@ fun HomeDualSpaceScreen(
                     ) {
                         Icon(
                             imageVector = Icons.Default.Add,
-                            contentDescription = "Tambah Aplikasi ke Ruang Virtual",
+                            contentDescription = "Adicionar aplicativo ao espaço virtual",
                             tint = InsCyanPrimary,
                             modifier = Modifier.size(30.dp)
                         )
                     }
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "Tambah Klon",
+                        text = "Adicionar clone",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White,
                         fontWeight = FontWeight.Medium,
@@ -755,7 +755,7 @@ private fun ClonedAppGridCard(
                     onDismissRequest = { menuExpanded = false }
                 ) {
                     DropdownMenuItem(
-                        text = { Text("Jalankan APK (${clone.recentsTaskTitle})") },
+                        text = { Text("Executar APK (${clone.recentsTaskTitle})") },
                         leadingIcon = { Icon(Icons.Default.PlayArrow, contentDescription = null) },
                         onClick = {
                             menuExpanded = false
@@ -784,7 +784,7 @@ private fun ClonedAppGridCard(
                         modifier = Modifier.testTag("menu_clear_data_${clone.id}")
                     )
                     DropdownMenuItem(
-                        text = { Text("Bersihkan Cache Clone", color = InsEmeraldActive) },
+                        text = { Text("Limpar cache do clone", color = InsEmeraldActive) },
                         leadingIcon = {
                             Icon(
                                 Icons.Default.CleaningServices,
@@ -800,7 +800,7 @@ private fun ClonedAppGridCard(
                     )
                     HorizontalDivider()
                     DropdownMenuItem(
-                        text = { Text("Device ID & Mock GPS Spoof") },
+                        text = { Text("ID do dispositivo e GPS simulado") },
                         leadingIcon = { Icon(Icons.Default.Fingerprint, contentDescription = null) },
                         onClick = {
                             menuExpanded = false
@@ -808,7 +808,7 @@ private fun ClonedAppGridCard(
                         }
                     )
                     DropdownMenuItem(
-                        text = { Text("Buka di INS Manager (DB/XML)") },
+                        text = { Text("Abrir no Gerenciador INS (DB/XML)") },
                         leadingIcon = { Icon(Icons.Default.Storage, contentDescription = null) },
                         onClick = {
                             menuExpanded = false
@@ -829,7 +829,7 @@ private fun ClonedAppGridCard(
                         }
                     )
                     DropdownMenuItem(
-                        text = { Text("Upload APK ke Tmpfiles.org", color = InsAmberWarning) },
+                        text = { Text("Enviar APK para Tmpfiles.org", color = InsAmberWarning) },
                         leadingIcon = { Icon(Icons.Default.CloudUpload, contentDescription = null, tint = InsAmberWarning) },
                         onClick = {
                             menuExpanded = false
@@ -838,7 +838,7 @@ private fun ClonedAppGridCard(
                     )
                     HorizontalDivider()
                     DropdownMenuItem(
-                        text = { Text("Hapus Klon & Sandbox", color = InsCrimsonDanger) },
+                        text = { Text("Excluir clone e sandbox", color = InsCrimsonDanger) },
                         leadingIcon = {
                             Icon(Icons.Default.DeleteOutline, contentDescription = null, tint = InsCrimsonDanger)
                         },
@@ -1046,7 +1046,7 @@ private fun ClearCloneDataConfirmationDialog(
                 ) {
                     Icon(Icons.Default.CleaningServices, contentDescription = null, tint = InsEmeraldActive, modifier = Modifier.size(16.dp))
                     Spacer(modifier = Modifier.width(6.dp))
-                    Text("Bersihkan Cache Saja (Tanpa Logout Akun)", color = InsEmeraldActive)
+                    Text("Limpar apenas o cache (sem sair da conta)", color = InsEmeraldActive)
                 }
             }
         },
@@ -1058,12 +1058,12 @@ private fun ClearCloneDataConfirmationDialog(
             ) {
                 Icon(Icons.Default.DeleteOutline, contentDescription = null, tint = Color.White, modifier = Modifier.size(16.dp))
                 Spacer(modifier = Modifier.width(6.dp))
-                Text("Hapus Data & Reset Clone", color = Color.White, fontWeight = FontWeight.Bold)
+                Text("Excluir dados e redefinir clone", color = Color.White, fontWeight = FontWeight.Bold)
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Batal", color = Color.Gray)
+                Text("Cancelar", color = Color.Gray)
             }
         }
     )
@@ -1089,7 +1089,7 @@ private fun FolderAlatDialog(
                 Icon(Icons.Default.FolderOpen, contentDescription = null, tint = InsVioletTertiary)
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
-                    Text(text = "Folder Virtual: $folderName", style = MaterialTheme.typography.titleLarge, color = Color.White)
+                    Text(text = "Pasta virtual: $folderName", style = MaterialTheme.typography.titleLarge, color = Color.White)
                     Text(
                         text = "${appsInFolder.size} Aplikasi Terisolasi",
                         style = MaterialTheme.typography.labelSmall,
@@ -1138,16 +1138,16 @@ private fun FolderAlatDialog(
                                     )
                                 }
                                 IconButton(onClick = { onClearCloneData(clone) }) {
-                                    Icon(Icons.Default.CleaningServices, contentDescription = "Hapus Data Clone", tint = InsAmberWarning)
+                                    Icon(Icons.Default.CleaningServices, contentDescription = "Excluir dados do clone", tint = InsAmberWarning)
                                 }
                                 IconButton(onClick = { onConfigureIdentity(clone) }) {
-                                    Icon(Icons.Default.Fingerprint, contentDescription = "Spoof ID", tint = InsCyanPrimary)
+                                    Icon(Icons.Default.Fingerprint, contentDescription = "Falsificar ID", tint = InsCyanPrimary)
                                 }
                                 IconButton(onClick = { onOpenInInsManager(clone) }) {
                                     Icon(Icons.Default.Storage, contentDescription = "INS Manager", tint = InsVioletTertiary)
                                 }
                                 IconButton(onClick = { onRemoveFromFolder(clone) }) {
-                                    Icon(Icons.AutoMirrored.Filled.DriveFileMove, contentDescription = "Keluarkan dari folder", tint = InsAmberWarning)
+                                    Icon(Icons.AutoMirrored.Filled.DriveFileMove, contentDescription = "Remover da pasta", tint = InsAmberWarning)
                                 }
                             }
                         }
@@ -1162,12 +1162,12 @@ private fun FolderAlatDialog(
             ) {
                 Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                 Spacer(modifier = Modifier.width(6.dp))
-                Text("Tambah ke Folder")
+                Text("Adicionar à pasta")
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Tutup")
+                Text("Fechar")
             }
         }
     )
@@ -1218,7 +1218,7 @@ fun AddCloneBottomSheet(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = "Tambah Aplikasi ke Ruang Virtual",
+                        text = "Adicionar aplicativo ao espaço virtual",
                         style = MaterialTheme.typography.titleLarge,
                         color = Color.White
                     )
@@ -1251,17 +1251,17 @@ fun AddCloneBottomSheet(
                 FilterChip(
                     selected = targetFolder == null,
                     onClick = { targetFolder = null },
-                    label = { Text("Beranda Utama") }
+                    label = { Text("Tela inicial") }
                 )
                 FilterChip(
                     selected = targetFolder == "Alat",
                     onClick = { targetFolder = "Alat" },
-                    label = { Text("Folder 'Alat'") },
+                    label = { Text("Pasta 'Ferramentas'") },
                     leadingIcon = { Icon(Icons.Default.Folder, contentDescription = null, modifier = Modifier.size(15.dp)) }
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("Fake GPS", style = MaterialTheme.typography.labelSmall, color = InsEmeraldActive)
+                    Text("GPS simulado", style = MaterialTheme.typography.labelSmall, color = InsEmeraldActive)
                     Spacer(modifier = Modifier.width(6.dp))
                     Switch(checked = enableMockGps, onCheckedChange = { enableMockGps = it })
                 }
@@ -1271,7 +1271,7 @@ fun AddCloneBottomSheet(
             OutlinedTextField(
                 value = filterQuery,
                 onValueChange = { filterQuery = it },
-                placeholder = { Text("Cari APK yang terinstal di HP Anda...") },
+                placeholder = { Text("Pesquisar APKs instalados no seu celular...") },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 singleLine = true,
                 shape = RoundedCornerShape(12.dp),
@@ -1324,7 +1324,7 @@ fun AddCloneBottomSheet(
                                         shape = RoundedCornerShape(6.dp)
                                     ) {
                                         Text(
-                                            text = if (candidate.isInstalledOnHost) "TERINSTAL" else candidate.categoryTag,
+                                            text = if (candidate.isInstalledOnHost) "INSTALADO" else candidate.categoryTag,
                                             style = MaterialTheme.typography.labelSmall,
                                             color = if (candidate.isInstalledOnHost) InsEmeraldActive else InsCyanPrimary,
                                             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
@@ -1347,7 +1347,7 @@ fun AddCloneBottomSheet(
                             ) {
                                 Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Kloning", style = MaterialTheme.typography.labelLarge)
+                                Text("Clonar", style = MaterialTheme.typography.labelLarge)
                             }
                         }
                     }
@@ -1375,7 +1375,7 @@ fun TmpfilesUploadDialog(
     fun copyToClipboard(label: String, text: String) {
         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
         clipboard?.setPrimaryClip(ClipData.newPlainText(label, text))
-        Toast.makeText(context, "Link disalin: $text", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Link copiado: $text", Toast.LENGTH_SHORT).show()
     }
 
     AlertDialog(
@@ -1387,7 +1387,7 @@ fun TmpfilesUploadDialog(
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
                     Text(
-                        text = "Upload APK ke Tmpfiles.org",
+                        text = "Enviar APK para Tmpfiles.org",
                         style = MaterialTheme.typography.titleMedium,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
@@ -1404,7 +1404,7 @@ fun TmpfilesUploadDialog(
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text(
-                    text = "Pilih file APK yang ingin diunggah ke Tmpfiles.org:",
+                    text = "Selecione o arquivo APK para enviar ao Tmpfiles.org:",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -1437,7 +1437,7 @@ fun TmpfilesUploadDialog(
                         Spacer(modifier = Modifier.width(10.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "APK Clone App (Aplikasi Utama Ini)",
+                                text = "APK do Clone App (este aplicativo principal)",
                                 color = Color.White,
                                 fontSize = 13.sp,
                                 fontWeight = FontWeight.Bold
@@ -1526,7 +1526,7 @@ fun TmpfilesUploadDialog(
                         val mbUploaded = String.format("%.2f", uploadedBytesState / (1024.0 * 1024.0))
                         val mbTotal = String.format("%.2f", totalBytesState / (1024.0 * 1024.0))
                         Text(
-                            text = "Mengunggah ke tmpfiles.org... $mbUploaded MB / $mbTotal MB (${(uploadProgress * 100).toInt()}%)",
+                            text = "Enviando para tmpfiles.org... $mbUploaded MB / $mbTotal MB (${(uploadProgress * 100).toInt()}%)",
                             color = InsEmeraldActive,
                             fontSize = 11.sp,
                             fontFamily = JetBrainsMonoFamily
@@ -1547,7 +1547,7 @@ fun TmpfilesUploadDialog(
                                 verticalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = "Berhasil Diunggah ke Tmpfiles.org!",
+                                    text = "Upload concluído para o Tmpfiles.org!",
                                     color = InsEmeraldActive,
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Bold
@@ -1567,7 +1567,7 @@ fun TmpfilesUploadDialog(
                                     ) {
                                         Icon(Icons.Default.ContentCopy, contentDescription = null, tint = InsNavyDeep, modifier = Modifier.size(14.dp))
                                         Spacer(modifier = Modifier.width(4.dp))
-                                        Text("Salin Direct Link", color = InsNavyDeep, fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                        Text("Copiar link direto", color = InsNavyDeep, fontSize = 11.sp, fontWeight = FontWeight.Bold)
                                     }
                                     OutlinedButton(
                                         onClick = { copyToClipboard("Tmpfiles Page URL", result.pageUrl) },
@@ -1576,7 +1576,7 @@ fun TmpfilesUploadDialog(
                                     ) {
                                         Icon(Icons.Default.ContentCopy, contentDescription = null, tint = InsCyanPrimary, modifier = Modifier.size(14.dp))
                                         Spacer(modifier = Modifier.width(4.dp))
-                                        Text("Salin Page URL", color = Color.White, fontSize = 11.sp)
+                                        Text("Copiar URL da página", color = Color.White, fontSize = 11.sp)
                                     }
                                 }
                             }
@@ -1589,7 +1589,7 @@ fun TmpfilesUploadDialog(
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
-                                text = "Gagal upload: ${result.errorMessage}",
+                                text = "Falha no upload: ${result.errorMessage}",
                                 color = InsCrimsonDanger,
                                 fontSize = 11.sp,
                                 modifier = Modifier.padding(10.dp)
@@ -1648,7 +1648,7 @@ fun TmpfilesUploadDialog(
                 Icon(Icons.Default.CloudUpload, contentDescription = null, tint = InsNavyDeep, modifier = Modifier.size(16.dp))
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
-                    text = if (isUploading) "Mengunggah..." else "Upload Sekarang",
+                    text = if (isUploading) "Mengunggah..." else "Enviar agora",
                     color = InsNavyDeep,
                     fontWeight = FontWeight.Bold
                 )
@@ -1659,7 +1659,7 @@ fun TmpfilesUploadDialog(
                 enabled = !isUploading,
                 onClick = onDismiss
             ) {
-                Text("Tutup", color = Color.Gray)
+                Text("Fechar", color = Color.Gray)
             }
         }
     )
