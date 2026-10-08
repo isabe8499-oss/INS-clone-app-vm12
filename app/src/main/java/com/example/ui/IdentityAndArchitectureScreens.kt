@@ -171,7 +171,7 @@ fun IdentityGuardOverviewScreen(
                             ) {
                                 Icon(Icons.Default.Casino, contentDescription = null, modifier = Modifier.size(15.dp), tint = InsCyanPrimary)
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Acak", style = MaterialTheme.typography.labelSmall)
+                                Text("Aleatório", style = MaterialTheme.typography.labelSmall)
                             }
                             Button(
                                 onClick = { onEditCloneIdentity(clone) },
@@ -243,11 +243,11 @@ fun IdentityGuardOverviewScreen(
                         ) {
                             Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(14.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("Simulasi IPC", style = MaterialTheme.typography.labelSmall)
+                            Text("Simulação IPC", style = MaterialTheme.typography.labelSmall)
                         }
                     }
                     TextButton(onClick = onClearLogs) {
-                        Text("Bersihkan", style = MaterialTheme.typography.labelSmall)
+                        Text("Limpar", style = MaterialTheme.typography.labelSmall)
                     }
                 }
             }
@@ -377,7 +377,7 @@ fun PerCloneIdentityConfigSheet(
                 ) {
                     Icon(Icons.Default.Casino, contentDescription = null, modifier = Modifier.size(16.dp))
                     Spacer(modifier = Modifier.width(6.dp))
-                    Text("Acak Semua")
+                    Text("Aleatorizar Tudo")
                 }
             }
 
@@ -413,7 +413,7 @@ fun PerCloneIdentityConfigSheet(
                 label = { Text("Settings.Secure.ANDROID_ID (16-hex)") },
                 trailingIcon = {
                     IconButton(onClick = { androidId = IdentitySpoofer.generateAndroidId() }) {
-                        Icon(Icons.Default.Casino, contentDescription = "Acak Android ID", tint = InsCyanPrimary)
+                        Icon(Icons.Default.Casino, contentDescription = "Aleatório Android ID", tint = InsCyanPrimary)
                     }
                 },
                 singleLine = true,
@@ -428,7 +428,7 @@ fun PerCloneIdentityConfigSheet(
                 label = { Text("TelephonyManager.getImei() / getDeviceId() (15 digit Luhn)") },
                 trailingIcon = {
                     IconButton(onClick = { imei = IdentitySpoofer.generateLuhnValidImei() }) {
-                        Icon(Icons.Default.Casino, contentDescription = "Acak IMEI", tint = InsCyanPrimary)
+                        Icon(Icons.Default.Casino, contentDescription = "Aleatório IMEI", tint = InsCyanPrimary)
                     }
                 },
                 singleLine = true,
@@ -478,7 +478,7 @@ fun PerCloneIdentityConfigSheet(
                     label = { Text("WifiInfo.getMacAddress()") },
                     trailingIcon = {
                         IconButton(onClick = { wifiMac = IdentitySpoofer.generateWifiMacAddress() }) {
-                            Icon(Icons.Default.Casino, contentDescription = "Acak MAC", tint = InsCyanPrimary)
+                            Icon(Icons.Default.Casino, contentDescription = "Aleatório MAC", tint = InsCyanPrimary)
                         }
                     },
                     singleLine = true,
@@ -499,7 +499,7 @@ fun PerCloneIdentityConfigSheet(
                 label = { Text("Advertising ID (GAID UUID)") },
                 trailingIcon = {
                     IconButton(onClick = { gaid = IdentitySpoofer.generateAdvertisingId() }) {
-                        Icon(Icons.Default.Casino, contentDescription = "Acak GAID", tint = InsCyanPrimary)
+                        Icon(Icons.Default.Casino, contentDescription = "Aleatório GAID", tint = InsCyanPrimary)
                     }
                 },
                 singleLine = true,
@@ -599,7 +599,7 @@ fun PerCloneIdentityConfigSheet(
             ) {
                 Icon(Icons.Default.Save, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("Simpan Identitas & Terapkan ke Sandbox")
+                Text("Salvar Identidade e Aplicar ao Sandbox")
             }
         }
     }
@@ -649,7 +649,7 @@ fun SystemArchitectureScreen() {
                 badge = "virtual.spoof",
                 color = InsVioletTertiary,
                 points = listOf(
-                    "Java Dynamic Proxy (Proxy.newProxyInstance + InvocationHandler): Mengintersepsi panggilan IPC ke ITelephony.Stub, IContentProvider(Settings.Secure), IWifiManager.Stub, IAdvertisingIdService, dan ILocationManager.Stub.",
+                    "Java Dynamic Proxy (Proxy.newProxyInstâncias + InvocationHandler): Mengintersepsi panggilan IPC ke ITelephony.Stub, IContentProvider(Settings.Secure), IWifiManager.Stub, IAdvertisingIdService, dan ILocationManager.Stub.",
                     "Per-Clone Spoofing Matrix: Setiap instance memiliki ANDROID_ID (16-hex), IMEI (15-digit Luhn-valid), IMSI, Build.SERIAL/MODEL/MANUFACTURER/BRAND, Wi-Fi MAC Address, dan GAID yang unik.",
                     "Isolated Mock Location (Fake GPS): Menyuntikkan objek android.location.Location(\"gps\") palsu khusus untuk klon tanpa memengaruhi GPS aplikasi utama di luar ruang virtual."
                 )
@@ -806,8 +806,8 @@ fun VirtualProfileSecurityDialog(
                 Icon(Icons.Default.Shield, contentDescription = null, tint = InsCyanPrimary)
                 Spacer(modifier = Modifier.width(8.dp))
                 Column {
-                    Text("Profil Ruang Virtual INS", style = MaterialTheme.typography.titleLarge, color = Color.White)
-                    Text("Package: com.ins.virtualspace", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
+                    Text("Perfil do Espaço Virtual INS", style = MaterialTheme.typography.titleLarge, color = Color.White)
+                    Text("Pacote: com.ins.virtualspace", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
                 }
             }
         },
@@ -819,10 +819,10 @@ fun VirtualProfileSecurityDialog(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        IdentityKeyValLine("Mode Eksekusi", "Root-Free User-Space Sandbox", InsEmeraldActive)
+                        IdentityKeyValLine("Mode Eksekusi", "Sandbox em Espaço de Usuário sem Root", InsEmeraldActive)
                         IdentityKeyValLine("Jalur Data Virtual", "/data/user/0/com.ins.virtualspace/virtual/user/0/", InsCyanPrimary)
                         IdentityKeyValLine("Format Recents", "[NamaAplikasi](Clone App)", Color.White)
-                        IdentityKeyValLine("Total Klon Terdaftar", "$totalClones Instance", Color.White)
+                        IdentityKeyValLine("Total de Clones Registrados", "$totalClones Instâncias", Color.White)
                         IdentityKeyValLine("Proses Virtual Aktif", "$runningClones Running", InsEmeraldActive)
                         IdentityKeyValLine("Intersepsi Binder IPC", "$totalHookEvents Panggilan", InsVioletTertiary)
                     }
