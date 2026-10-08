@@ -191,7 +191,7 @@ fun HomeDualSpaceScreen(
     var clonePendingClearData by remember { mutableStateOf<CloneAppEntity?>(null) }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        // 1. Modern Dual Space Header ("Clone App", Memory Cleaner, Search, Profile)
+        // 1. Modern Dual Space Header ("Clonar Aplicativo", Memory Cleaner, Search, Profile)
         Surface(
             color = InsSurfaceDark,
             tonalElevation = 4.dp,
@@ -230,7 +230,7 @@ fun HomeDualSpaceScreen(
                         Column {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    text = "Clone App",
+                                    text = "Clonar Aplicativo",
                                     style = MaterialTheme.typography.headlineMedium,
                                     color = Color.White,
                                     modifier = Modifier.testTag("home_header_title")
@@ -1019,7 +1019,7 @@ private fun ClearCloneDataConfirmationDialog(
                     ) {
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Reset Android ID & Device ID Baru",
+                                text = "Redefinir Android ID e Novo ID do Dispositivo",
                                 style = MaterialTheme.typography.labelMedium,
                                 color = Color.White,
                                 fontWeight = FontWeight.Bold
@@ -1237,7 +1237,7 @@ fun AddCloneBottomSheet(
                     ) {
                         Icon(Icons.Default.UploadFile, contentDescription = null, tint = InsCyanPrimary, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(6.dp))
-                        Text("Impor .APK", style = MaterialTheme.typography.labelMedium, color = InsCyanPrimary)
+                        Text("Importar .APK", style = MaterialTheme.typography.labelMedium, color = InsCyanPrimary)
                     }
                 }
             }
@@ -1409,7 +1409,7 @@ fun TmpfilesUploadDialog(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
-                // Option 1: Host App APK itself ("Clone App" APK)
+                // Option 1: Host App APK itself ("Clonar Aplicativo" APK)
                 Surface(
                     color = if (targetClone == null) InsCyanPrimary.copy(alpha = 0.16f) else InsSurfaceCard,
                     shape = RoundedCornerShape(12.dp),
@@ -1437,7 +1437,7 @@ fun TmpfilesUploadDialog(
                         Spacer(modifier = Modifier.width(10.dp))
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "APK do Clone App (este aplicativo principal)",
+                                text = "APK do Clonar Aplicativo (este aplicativo principal)",
                                 color = Color.White,
                                 fontSize = 13.sp,
                                 fontWeight = FontWeight.Bold
