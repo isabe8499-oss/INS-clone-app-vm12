@@ -27,6 +27,9 @@ jobs:
       - name: Accept Android SDK licenses
         run: yes | sdkmanager --licenses > /dev/null || true
 
+      - name: Verify Android SDK
+        run: sdkmanager --list | head -n 40
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
