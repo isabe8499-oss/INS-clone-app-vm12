@@ -117,7 +117,7 @@ fun InsVirtualSpaceApp(
     val installableCandidates by viewModel.installableCandidates.collectAsStateWithLifecycle()
     val statusBannerMessage by viewModel.statusBannerMessage.collectAsStateWithLifecycle()
 
-    // INS Manager states
+    // Gerenciador INS states
     val selectedManagerCloneId by viewModel.selectedManagerCloneId.collectAsStateWithLifecycle()
     val insSubTab by viewModel.insSubTab.collectAsStateWithLifecycle()
     val currentRelativePath by viewModel.currentRelativePath.collectAsStateWithLifecycle()
@@ -199,8 +199,8 @@ fun InsVirtualSpaceApp(
                         NavigationBarItem(
                             selected = currentTab == MainNavTab.INS_MANAGER,
                             onClick = { viewModel.selectTab(MainNavTab.INS_MANAGER) },
-                            icon = { Icon(Icons.Default.Storage, contentDescription = "INS Manager") },
-                            label = { Text("INS Manager") },
+                            icon = { Icon(Icons.Default.Storage, contentDescription = "Gerenciador INS") },
+                            label = { Text("Gerenciador INS") },
                             modifier = Modifier.testTag("nav_tab_ins_manager")
                         )
                         NavigationBarItem(
@@ -242,8 +242,8 @@ fun InsVirtualSpaceApp(
                         NavigationRailItem(
                             selected = currentTab == MainNavTab.INS_MANAGER,
                             onClick = { viewModel.selectTab(MainNavTab.INS_MANAGER) },
-                            icon = { Icon(Icons.Default.Storage, contentDescription = "INS Manager") },
-                            label = { Text("INS Manager") },
+                            icon = { Icon(Icons.Default.Storage, contentDescription = "Gerenciador INS") },
+                            label = { Text("Gerenciador INS") },
                             modifier = Modifier.testTag("rail_tab_ins_manager")
                         )
                         NavigationRailItem(
@@ -437,7 +437,7 @@ fun InsVirtualSpaceApp(
                     Icon(Icons.Default.VerifiedUser, contentDescription = null, tint = InsCyanPrimary)
                     Spacer(modifier = Modifier.width(10.dp))
                     Column {
-                        Text("INS Virtual Space Engine", style = MaterialTheme.typography.titleMedium, color = Color.White)
+                        Text("Motor do Espaço Virtual INS", style = MaterialTheme.typography.titleMedium, color = Color.White)
                         Text("com.ins.virtualspace • v3.4.0-PRO", style = MaterialTheme.typography.labelSmall, color = InsCyanPrimary)
                     }
                 }
@@ -451,7 +451,7 @@ fun InsVirtualSpaceApp(
                     ) {
                         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                             Text("Status do motor: ATIVO (modo sem root)", style = MaterialTheme.typography.labelMedium, color = InsEmeraldActive)
-                            Text("Mount Path: /data/user/0/com.ins.virtualspace/virtual/user/0/", style = MaterialTheme.typography.labelSmall, fontFamily = JetBrainsMonoFamily, color = Color.White)
+                            Text("Caminho de Montagem: /data/user/0/com.ins.virtualspace/virtual/user/0/", style = MaterialTheme.typography.labelSmall, fontFamily = JetBrainsMonoFamily, color = Color.White)
                             Text("Total de instâncias clonadas: ${clonedApps.size} APK", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             Text("Interceptações Binder registradas: ${hookLogs.size} Events", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
